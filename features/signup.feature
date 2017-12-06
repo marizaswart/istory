@@ -10,6 +10,7 @@ Feature: Sign Up
     And I enter "Password confirmation" as "password"
     And I click "Sign up"
     Then I should be on the landing page
+    And I should see "Welcome! You have signed up successfully."
 
   Scenario: User leaves email field empty on sign up
     Given I am on the sign up page
@@ -17,7 +18,7 @@ Feature: Sign Up
     And I enter "Password" as "password"
     And I enter "Password confirmation" as "password"
     And I click "Sign up"
-    Then I should see an error message "Email can't be blank"
+    Then I should see "Email can't be blank"
 
   Scenario: User leaves password field empty on sign up
     Given I am on the sign up page
@@ -25,7 +26,7 @@ Feature: Sign Up
     And I enter "Password" as ""
     And I enter "Password confirmation" as "password"
     And I click "Sign up"
-    Then I should see an error message "Password can't be blank"
+    Then I should see "Password can't be blank"
 
   Scenario: User password does not match password confirmation on sign up
     Given I am on the sign up page
@@ -33,4 +34,4 @@ Feature: Sign Up
     And I enter "Password" as "password"
     And I enter "Password confirmation" as "secretcode"
     And I click "Sign up"
-    Then I should see an error message "Password confirmation doesn't match Password"
+    Then I should see "Password confirmation doesn't match Password"

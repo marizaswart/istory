@@ -14,6 +14,6 @@ Then("I should be on the landing page") do
   expect(current_path).to eq '/'
 end
 
-Then("I should see an error message {string}") do |text|
+Then("I should see {string}") do |text|
   expect(page).to have_content  text
 end
