@@ -1,5 +1,5 @@
 Given("I am on the sign up page") do
-  visit '/users/sign_up'
+  visit new_user_registration_path
 end
 
 When("I enter {string} as {string}") do |field, value|
@@ -11,7 +11,7 @@ When("I click {string}") do |element|
 end
 
 Then("I should be on the landing page") do
-  expect(current_path).to eq '/'
+  expect(current_path).to eq root_path
 end
 
 Then("I should see {string}") do |text|
