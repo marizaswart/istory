@@ -7,13 +7,20 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <% if notice %>
-      <p><%= notice %></p>
-    <% elsif alert %>
-      <p><%= alert %></p>
-    <% end %>
+<body>
+  <section id="navbar">
+    <ul>
+      <li><%= link_to "Login", '#' %></li>
+      <li><%= link_to "Sign up", '#' %></li>
+    </ul>
+  </section>
+  <% if notice %>
+    <p><%= notice %></p>
+  <% elsif alert %>
+    <p><%= alert %></p>
+  <% end %>
+  <section id="content">
     <%= yield %>
-  </body>
+  </section>
+</body>
 </html>

@@ -7,13 +7,11 @@ When("I enter {string} as {string}") do |field, value|
 end
 
 When("I click {string}") do |element|
-  click_link_or_button element
+  within "#content" do
+    click_link_or_button element
+  end
 end
 
 Then("I should be on the landing page") do
   expect(current_path).to eq root_path
-end
-
-Then("I should see {string}") do |text|
-  expect(page).to have_content  text
 end
