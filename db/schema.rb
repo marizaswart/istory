@@ -21,9 +21,6 @@ ActiveRecord::Schema.define(version: 20171207192140) do
     t.bigint "story_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "choice_a"
-    t.string "choice_b"
-    t.string "choice_c"
     t.string "title"
     t.index ["story_id"], name: "index_chapters_on_story_id"
   end

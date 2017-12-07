@@ -4,9 +4,6 @@ RSpec.describe Chapter, type: :model do
   describe 'database' do
     it {is_expected.to have_db_column :content}
     it {is_expected.to have_db_column :chapter_id}
-    it {is_expected.to have_db_column :choice_a}
-    it {is_expected.to have_db_column :choice_b}
-    it {is_expected.to have_db_column :choice_c}
   end
 
   describe 'validations' do
