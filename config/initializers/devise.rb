@@ -16,7 +16,11 @@ Devise.setup do |config|
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
-  config.omniauth :facebook, "APP_ID", "APP_SECRET"
+  config.omniauth :facebook,
+                  # 'app_id',
+                  # 'app_secret',
+                  # callback_url: 'http: '
+                  ENV["FACEBOOK_CONSUMER_KEY"], ENV["FACEBOOK_CONSUMER_SECRET"]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

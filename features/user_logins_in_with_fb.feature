@@ -5,6 +5,6 @@ Feature: User logins in with Facebook
 
   Scenario: User logins in successfully with facebook
     Given I visit the landing page
-    And I click "Login with Facebook"
+    And I click "Login with Facebook" button
     Then I should be on the landing page
     And I should see "You have been signed in successfully"
