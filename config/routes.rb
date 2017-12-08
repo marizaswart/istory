@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'chapters/show'
-
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: :omniauth_callbacks }
 
   root controller: :welcome, action: :index
 
