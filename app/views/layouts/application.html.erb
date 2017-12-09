@@ -30,9 +30,11 @@
         <% end %>
         <%= yield %>
       </section>
-      <section id ="footer">
-        <p><%= link_to "Contact", '#' %></p>
-        <p><%= link_to "About", '#' %></p>
-      </section>
+      <footer>
+        <div class="card-footer text-muted fixed-bottom">
+          <p><%= link_to "Contact", '#' %></p>
+          <p><%= link_to "About", '#' %></p>
+        </div>
+      </footer>
     </body>
   </html>
