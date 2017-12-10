@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
     <body>
-      <section>
+      <section id="navbar">
         <nav class="navbar navbar-expand-sm bg-light">
           <a class="navbar-brand" href="root_path">iStory</a>
           <ul class="nav">
@@ -30,11 +30,13 @@
         <% end %>
       </section>
       <%= yield %>
-      <footer>
-        <div class="card-footer text-muted">
-          <p><%= link_to "Contact", '#' %></p>
-          <p><%= link_to "About", '#' %></p>
-        </div>
-      </footer>
+      <section id="footer">
+        <footer>
+          <div class="card-footer text-muted">
+            <p><%= link_to "Contact", '#' %></p>
+            <p><%= link_to "About", '#' %></p>
+          </div>
+        </footer>
+      </section>
     </body>
   </html>
