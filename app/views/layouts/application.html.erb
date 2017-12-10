@@ -11,7 +11,7 @@
       <section id="navbar">
         <nav class="navbar navbar-expand-sm bg-light">
           <div class="container">
-          <a class="navbar-brand" href="root_path">iStory</a>
+          <%= link_to "iStory", root_path, class: "navbar-brand" %>
           <ul class="nav">
             <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path, class: "nav-link" %></li>
