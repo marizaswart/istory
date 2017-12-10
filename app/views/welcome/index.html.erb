@@ -5,17 +5,29 @@
   </div>
 </section>
 
+<!-- <div class="container">
+  <div class="row">
+    <% @stories.each do |story| %>
+      <div class="card">
+          <div class="card-body">
+          <h1 class="card-title"><%= story.title %></h1>
+          <p class="card-text"><%= story.intro %></p>
+          <div class="btn btn-primary"><%= link_to 'Take me to the story', story_path(story) %></div>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div> -->
+
 <div class="container">
   <div class="row">
     <div class="card">
       <img class="card-img-top" src="starship.jpg" alt="Starship">
-      <% @stories.each do |story| %>
         <div class="card-body">
-          <h4 class="card-title"><%= story.title %></h4>
-          <p class="card-text"><%= story.intro %> When a asteroid speeds towards them, what should they do? Help them decide!</p>
-          <div class="btn btn-primary"><%= link_to 'Take me to the story', story_path(story), class: 'css_style', style: 'color:white' %></div>
+          <h4 class="card-title">Starship</h4>
+          <p class="card-text">Once upon a time, in a far away galaxy. There was a young team on the Discovery Starship</p>
+          <div class="btn btn-primary"><%= link_to 'Take me to the story', story_path(1), class: 'css_style', style: 'color:white' %></div>
         </div>
-      <% end %>
     </div>
     <div class="card">
       <img class="card-img-top" src="wonderland.jpg" alt="wonderland">
