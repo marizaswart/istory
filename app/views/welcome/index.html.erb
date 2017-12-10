@@ -1,6 +1,11 @@
 <h1>iStory</h1>
 <p>An interactive journey</p>
 <p></p>
-<div class="tale"><h1><%= link_to 'Tale' %></h1>
-  <p>Lorem ipsum dolor sit amet</p>
+
+<div id="stories-container">
+  <% @stories.each do |story| %>
+      <h1><%= story.title %></h1>
+      <h4><%= story.intro %></h4>
+      <h4><%= link_to 'Take me to the story', story_path(story) %></h4>
+  <% end %>
 </div>

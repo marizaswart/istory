@@ -18,6 +18,11 @@ Feature: Story
       | Shoot it with a laser | Run                   | The monster runs after you. Go right or left?             |
       | Run                   | Right                 | The monster got stuck and you got away. The end           |
 
+  Scenario: User can choose a story to read
+    Given I am logged in as random user
+    And I visit the landing page
+    And I click "Take me to the story"
+    Then I visit the "Starship" story page
 
   Scenario: User reads first part of a story
     When I visit the "Starship" story page

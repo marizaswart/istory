@@ -1,7 +1,7 @@
-Feature: Login
+Feature: Login/Logout
   As a user
   In order to access my account
-  I would like to be able to login to my account
+  I would like to be able to login and out of my account
 
   Background:
     Given the following user exists
@@ -45,3 +45,11 @@ Feature: Login
     And I enter "Password" as "notpassword"
     And I click "Log in"
     Then I should see "Invalid Email or password."
+
+  Scenario: User logs out of account
+    Given I am logged in as random user
+    And I visit the landing page
+    When I click "Logout" link
+    Then I should be on the landing page
+    And show me the page
+    And I should see "Signed out successfully."
