@@ -14,7 +14,7 @@
           <%= link_to "iStory", root_path, class: "navbar-brand" %>
           <ul class="nav">
             <% if user_signed_in? %>
-              <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %></lilass>
+              <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %></li>
             <% else %>
               <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
               <li class="nav-item"><%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path, class: "nav-link" %></li>
@@ -28,19 +28,18 @@
     <section id="content">
       <% flash.each do |key, value| %>
         <% if notice %>
-          <%= content_tag :div, value, class: "alert alert-success #{key}" %>
-          <% elsif alert %>
-            <%= content_tag :div, value, class: "alert alert-danger #{key}" %>
-          <% end %>
+              <%= content_tag :div, value, class: "alert alert-success #{key}" %>
+        <% elsif alert %>
+          <%= content_tag :div, value, class: "alert alert-danger #{key}" %>
         <% end %>
-        <%= yield %>
-      </section>
-
-      <footer id="footer" class="card-footer text-muted">
-        <div class="container">
-          <p style="word-spacing: 3em;"><%= link_to "Contact", '#' %>
-            <%= link_to "About", '#' %></p>
-        </div>
-      </footer>
-    </body>
-  </html>
+      <% end %>
+      <%= yield %>
+    </section>
+    <footer id="footer" class="card-footer text-muted">
+      <div class="container">
+        <p style="word-spacing: 3em;"><%= link_to "Contact", '#' %>
+          <%= link_to "About", '#' %></p>
+      </div>
+    </footer>
+  </body>
+</html>

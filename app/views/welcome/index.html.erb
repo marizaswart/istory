@@ -1,49 +1,36 @@
-
-  <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">iStory</h1>
-          <p class="lead">Welcome to an interactive journey</p>
-        </div>
-      </section>
-
+<section class="jumbotron text-center">
   <div class="container">
-    <div class="row">
-      <div class="card">
-        <% @stories.each do |story| %>
-          <div class="card-body">
-            <h1 class="card-title"><%= story.title %></h1>
-            <p class="card-text"><%= story.intro %></p>
-            <div class="btn btn-primary"><%= link_to 'Take me to the story', story_path(story) %></div>
-        <% end %>
-      </div>
-    </div>
-    </div>
+    <h1 class="jumbotron-heading">iStory</h1>
+    <p class="lead">Welcome to an interactive journey</p>
   </div>
+</section>
 
 <div class="container">
   <div class="row">
     <div class="card">
-      <img class="card-img-top" src="starship.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title">Starship</h4>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+      <img class="card-img-top" src="starship.jpg" alt="Starship">
+      <% @stories.each do |story| %>
+        <div class="card-body">
+          <h4 class="card-title"><%= story.title %></h4>
+          <p class="card-text"><%= story.intro %> When a asteroid speeds towards them, what should they do? Help them decide!</p>
+          <div class="btn btn-primary"><%= link_to 'Take me to the story', story_path(story), class: 'css_style', style: 'color:white' %></div>
+        </div>
+      <% end %>
     </div>
     <div class="card">
       <img class="card-img-top" src="wonderland.jpg" alt="wonderland">
       <div class="card-body">
         <h4 class="card-title">Wonderland</h4>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <p class="card-text">Wondering down a forest path, Alex feels drawn to the mysterious flowers that seem to form a wall along the path. Suddenly the road forks, where should she go? To the left or to the right?</p>
+        <a href="#" class="btn btn-primary">Take me to there</a>
       </div>
     </div>
     <div class="card">
-      <img class="card-img-top" src="far_far_away.jpg" alt="Card image cap">
+      <img class="card-img-top" src="far_far_away.jpg" alt="Far_away">
       <div class="card-body">
         <h4 class="card-title">Far far away</h4>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <p class="card-text">Since Sam told James about the magical kingdom of Far Far Away. James hasn't been able to think about anything else, should he go? Would you go?</p>
+        <a href="#" class="btn btn-primary">Take me to there</a>
       </div>
     </div>
   </div>
