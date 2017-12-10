@@ -14,9 +14,7 @@
           <%= link_to "iStory", root_path, class: "navbar-brand" %>
           <ul class="nav">
             <% if user_signed_in? %>
-              -
               <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %></lilass>
-              -
             <% else %>
               <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
               <li class="nav-item"><%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path, class: "nav-link" %></li>
