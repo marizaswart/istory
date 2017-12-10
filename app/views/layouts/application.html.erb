@@ -7,36 +7,42 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-    <body>
-      <section id="navbar">
-        <nav class="navbar navbar-expand-sm bg-light">
-          <div class="container">
+  <body>
+    <section id="navbar">
+      <nav class="navbar navbar-expand-sm bg-light">
+        <div class="container">
           <%= link_to "iStory", root_path, class: "navbar-brand" %>
           <ul class="nav">
-            <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></li>
+            <% if user_signed_in? %>
+              -
+              <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %></lilass>
+              -
+            <% else %>
+              <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path, class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></li>
+            <% end %>
           </ul>
         </div>
-        </nav>
-      </section>
+      </nav>
+    </section>
 
-      <section id="content">
-        <% flash.each do |key, value| %>
-          <% if notice %>
-            <%= content_tag :div, value, class: "alert alert-success #{key}" %>
+    <section id="content">
+      <% flash.each do |key, value| %>
+        <% if notice %>
+          <%= content_tag :div, value, class: "alert alert-success #{key}" %>
           <% elsif alert %>
             <%= content_tag :div, value, class: "alert alert-danger #{key}" %>
           <% end %>
         <% end %>
+        <%= yield %>
       </section>
 
-    <%= yield %>
-
-        <footer id="footer" class="card-footer text-muted">
-          <div class="container">
-            <p style="word-spacing: 3em;"><%= link_to "Contact", '#' %> <%= link_to "About", '#' %></p>
-          </div>
-        </footer>
+      <footer id="footer" class="card-footer text-muted">
+        <div class="container">
+          <p style="word-spacing: 3em;"><%= link_to "Contact", '#' %>
+            <%= link_to "About", '#' %></p>
+        </div>
+      </footer>
     </body>
   </html>
