@@ -7,25 +7,36 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-    <section id="navbar">
-      <ul>
-        <li><%= link_to "Login", new_user_session_path %></li>
-        <li><%= link_to "Sign up", new_user_registration_path %></li>
-        <li><%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path %></li>
-      </ul>
-    </section>
-    <section id="content">
-      <% if notice %>
-        <p><%= notice %></p>
-        <% elsif alert %>
-          <p><%= alert %></p>
-        <% end %>
-        <%= yield %>
+    <body>
+      <section id="navbar">
+        <nav class="navbar navbar-expand-sm bg-light">
+          <a class="navbar-brand" href="root_path">iStory</a>
+          <ul class="nav">
+            <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path, class: "nav-link" %></li>
+          </ul>
+        </nav>
       </section>
-      <section id ="footer">
-        <p><%= link_to "Contact", '#' %></p>
-        <p><%= link_to "About", '#' %></p>
+      <section id="content">
+        <% if notice %>
+          <div class="alert alert-success">
+           <p><%= notice %></p>
+          </div>
+        <% elsif alert %>
+          <div class="alert alert-danger">
+            <p><%= alert %></p>
+          </div>
+        <% end %>
+      </section>
+      <%= yield %>
+      <section id="footer">
+        <footer>
+          <div class="card-footer text-muted">
+            <p><%= link_to "Contact", '#' %></p>
+            <p><%= link_to "About", '#' %></p>
+          </div>
+        </footer>
       </section>
     </body>
   </html>
