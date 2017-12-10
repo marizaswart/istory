@@ -19,16 +19,25 @@ You would need the following gems to run the application
 ```
 gem 'rails'
 gem 'devise'
+gem 'boostrap'
+gem 'omniauth-facebook', '~> 4.0'
 ```
 
-And for testing the implementation 
+Gems implemented during development
 
 ```
 gem 'cucumber-rails'
 gem 'rspec-rails'
+gem 'shoulda-matchers'
+gem 'factory_bot_rails'
+gem 'launchy'
+gem 'cucumber-rails', require: false
+gem 'database_cleaner'
+gem 'coveralls', require: false
 ```
 
 ## Built With
 
 * [devise](https://github.com/plataformatec/devise) - The authentication solution used
 * [postgres](https://www.postgresql.org/) - The database used
+* [bootstrap](https://getbootstrap.com/) - The CSS framework
